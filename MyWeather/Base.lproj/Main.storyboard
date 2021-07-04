@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1180438" translatesAutoresizingMaskIntoConstraints="NO" id="Vbm-8I-F6f">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ovD-Zs-Ydp">
+                                <rect key="frame" x="10" y="54" width="394" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yw1-Gs-qee">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yw1-Gs-qee" secondAttribute="height" multiplier="1:1" id="9Mz-z6-ziD"/>
+                                        </constraints>
+                                        <color key="tintColor" name="watherColor"/>
+                                        <state key="normal" image="location.fill.viewfinder" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G03-VA-1P7">
+                                        <rect key="frame" x="74" y="0.0" width="246" height="50"/>
+                                        <color key="backgroundColor" red="0.94890624280000002" green="0.94909125569999997" blue="0.94890481230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.94890624280000002" green="0.94909125569999997" blue="0.94890481230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.94890624280000002" green="0.94909125569999997" blue="0.94890481230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKO-NS-U5n">
+                                        <rect key="frame" x="344" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="VKO-NS-U5n" secondAttribute="height" id="Rvz-qc-fFj"/>
+                                        </constraints>
+                                        <color key="tintColor" name="watherColor"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yw1-Gs-qee" secondAttribute="bottom" id="A9C-JF-jdC"/>
+                                    <constraint firstAttribute="bottom" secondItem="VKO-NS-U5n" secondAttribute="bottom" id="HhE-sa-8kE"/>
+                                    <constraint firstItem="VKO-NS-U5n" firstAttribute="top" secondItem="ovD-Zs-Ydp" secondAttribute="top" id="X2V-VV-HVJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="a8u-0K-OgU"/>
+                                    <constraint firstItem="yw1-Gs-qee" firstAttribute="top" secondItem="ovD-Zs-Ydp" secondAttribute="top" id="uAN-Bg-K1e"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.drizzle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bg3-IC-F5v">
+                                <rect key="frame" x="244" y="124" width="150" height="151.5"/>
+                                <color key="tintColor" name="watherColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Fnb-7z-sJv"/>
+                                    <constraint firstAttribute="width" constant="150" id="O4R-iE-IQr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5O-Zy-kkk">
+                                <rect key="frame" x="352.5" y="347" width="41.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Bdm-t7-U3q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ovD-Zs-Ydp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3LD-fB-G10"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m5O-Zy-kkk" secondAttribute="trailing" constant="20" id="8wc-Gz-hVw"/>
+                            <constraint firstAttribute="bottom" secondItem="Vbm-8I-F6f" secondAttribute="bottom" id="H2Q-BE-grT"/>
+                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="P40-bT-oM1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ovD-Zs-Ydp" secondAttribute="trailing" constant="10" id="cOm-kx-ndi"/>
+                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eSI-U6-xAI"/>
+                            <constraint firstItem="ovD-Zs-Ydp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hZw-H4-ko2"/>
+                            <constraint firstItem="Bg3-IC-F5v" firstAttribute="top" secondItem="ovD-Zs-Ydp" secondAttribute="bottom" constant="20" id="o6K-gC-waL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bg3-IC-F5v" secondAttribute="trailing" constant="20" id="sdd-G9-faf"/>
+                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w5E-v7-qU1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1180438" width="736" height="1308"/>
+        <image name="cloud.drizzle" catalog="system" width="128" height="125"/>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <namedColor name="watherColor">
+            <color red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
