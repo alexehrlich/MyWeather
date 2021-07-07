@@ -8,19 +8,26 @@
 import Foundation
 
 protocol WeatherManagerDelegate {
-    func didReceiveWeather()
+    func didReceiveWeather(_ weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
     
     let apikey = "928469f16d799b63d91e78e2c5c64820"
-    let baseURL = "https://api.openweathermap.org/data/2.5/weather?appid=928469f16d799b63d91e78e2c5c64820&units=metric&q="
+    let baseCityURL = "https://api.openweathermap.org/data/2.5/weather?appid=928469f16d799b63d91e78e2c5c64820&units=metric&q="
+    let locationURL = "https://api.openweathermap.org/data/2.5/weather?appid=928469f16d799b63d91e78e2c5c64820&units=metric&"
     
     var delegate: WeatherManagerDelegate!
     
     func fetchWeather(for city: String){
         
-        let finalURL = "\(baseURL)" + city
+        let finalURL = "\(baseCityURL)" + city
+        performRequest(for: finalURL)
+    }
+    
+    func fetchWeather(for location: (lon: Double, lat: Double)){
+        let finalURL = "\(locationURL)" + "lon=\(location.lon)&lat=\(location.lat)"
         performRequest(for: finalURL)
     }
     
@@ -32,8 +39,9 @@ struct WeatherManager {
                 if error != nil { return }
                 
                 if let safeData = data{
-                    parseJSON(for: safeData)
-                    delegate.didReceiveWeather()
+                    if let weather = parseJSON(for: safeData){
+                        delegate.didReceiveWeather(weather)
+                    }
                 }
             }
             task.resume()
@@ -41,14 +49,16 @@ struct WeatherManager {
         }
     }
     
-    private func parseJSON(for data: Data){
+    private func parseJSON(for data: Data) -> WeatherModel?{
         
         let decoder = JSONDecoder()
         
         do{
            let decodedData = try decoder.decode(WeatherData.self, from: data)
+            return WeatherModel(conditionID: decodedData.weather[0].id, city: decodedData.name, temp: decodedData.main.temp)
         }catch{
-            print(error)
+            delegate.didFailWithError(error: error)
+            return nil
         }
     }
 }

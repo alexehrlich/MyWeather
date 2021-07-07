@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1180438" translatesAutoresizingMaskIntoConstraints="NO" id="Vbm-8I-F6f">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ovD-Zs-Ydp">
                                 <rect key="frame" x="10" y="54" width="394" height="50"/>
                                 <subviews>
@@ -36,14 +33,35 @@
                                             <action selector="determineLocationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lN-Z8-pm5"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G03-VA-1P7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MjV-xY-LBI">
                                         <rect key="frame" x="74" y="0.0" width="246" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEH-0y-H6d">
+                                                <rect key="frame" x="0.0" y="0.0" width="246" height="48"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="watherColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9H-6c-blf">
+                                                <rect key="frame" x="0.0" y="48" width="246" height="2"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="2" id="O7g-vJ-yAz"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.94890624280000002" green="0.94909125569999997" blue="0.94890481230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" name="watherColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <constraints>
+                                            <constraint firstItem="pEH-0y-H6d" firstAttribute="top" secondItem="MjV-xY-LBI" secondAttribute="top" id="1DI-oe-gB1"/>
+                                            <constraint firstAttribute="trailing" secondItem="W9H-6c-blf" secondAttribute="trailing" id="Vjo-5D-CFV"/>
+                                            <constraint firstItem="pEH-0y-H6d" firstAttribute="leading" secondItem="MjV-xY-LBI" secondAttribute="leading" id="XcD-2x-z6a"/>
+                                            <constraint firstItem="W9H-6c-blf" firstAttribute="leading" secondItem="MjV-xY-LBI" secondAttribute="leading" id="azD-it-1GV"/>
+                                            <constraint firstAttribute="bottom" secondItem="W9H-6c-blf" secondAttribute="bottom" id="eNl-wW-kgu"/>
+                                            <constraint firstItem="W9H-6c-blf" firstAttribute="top" secondItem="pEH-0y-H6d" secondAttribute="bottom" id="r6M-Ex-GY3"/>
+                                            <constraint firstAttribute="trailing" secondItem="pEH-0y-H6d" secondAttribute="trailing" id="vbx-RG-nzK"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKO-NS-U5n">
                                         <rect key="frame" x="344" y="0.0" width="50" height="50"/>
                                         <constraints>
@@ -54,7 +72,7 @@
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
                                         <connections>
-                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdq-jS-gJB"/>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWu-eJ-S3D"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -79,7 +97,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eOf-70-xSD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" name="watherColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -101,30 +119,26 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="weatherBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ovD-Zs-Ydp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3LD-fB-G10"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tMb-6P-5yB" secondAttribute="trailing" constant="20" id="Ciq-3C-MTc"/>
                             <constraint firstItem="gOj-fO-iPL" firstAttribute="top" secondItem="ovD-Zs-Ydp" secondAttribute="bottom" constant="10" id="FWT-q3-FgP"/>
-                            <constraint firstAttribute="bottom" secondItem="Vbm-8I-F6f" secondAttribute="bottom" id="H2Q-BE-grT"/>
-                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="P40-bT-oM1"/>
                             <constraint firstItem="rK6-h4-PbD" firstAttribute="top" secondItem="tMb-6P-5yB" secondAttribute="bottom" constant="20" id="XdW-hX-x9O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ovD-Zs-Ydp" secondAttribute="trailing" constant="10" id="cOm-kx-ndi"/>
-                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eSI-U6-xAI"/>
                             <constraint firstItem="ovD-Zs-Ydp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hZw-H4-ko2"/>
                             <constraint firstItem="tMb-6P-5yB" firstAttribute="top" secondItem="Bg3-IC-F5v" secondAttribute="bottom" constant="20" id="mR6-nL-9o4"/>
                             <constraint firstItem="Bg3-IC-F5v" firstAttribute="top" secondItem="ovD-Zs-Ydp" secondAttribute="bottom" constant="20" id="o6K-gC-waL"/>
                             <constraint firstItem="tMb-6P-5yB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rsv-z4-0yX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bg3-IC-F5v" secondAttribute="trailing" constant="20" id="sdd-G9-faf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gOj-fO-iPL" secondAttribute="trailing" constant="20" id="srG-vD-di1"/>
-                            <constraint firstItem="Vbm-8I-F6f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w5E-v7-qU1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rK6-h4-PbD" secondAttribute="trailing" constant="20" id="wxU-A9-Pu5"/>
                             <constraint firstItem="rK6-h4-PbD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ylr-4T-4ZA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="rK6-h4-PbD" id="43c-Yx-30H"/>
-                        <outlet property="searchTextField" destination="G03-VA-1P7" id="CaN-xs-X2h"/>
+                        <outlet property="searchTextField" destination="pEH-0y-H6d" id="iaJ-1L-G2Z"/>
                         <outlet property="spinner" destination="gOj-fO-iPL" id="Ftk-aR-y2r"/>
                         <outlet property="temperatureLabel" destination="tMb-6P-5yB" id="goV-W8-RnM"/>
                         <outlet property="weatherIcon" destination="Bg3-IC-F5v" id="RWo-c5-yyW"/>
@@ -136,12 +150,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1180438" width="736" height="1308"/>
         <image name="cloud.drizzle" catalog="system" width="128" height="125"/>
         <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <namedColor name="watherColor">
             <color red="0.12999999523162842" green="0.12999999523162842" blue="0.12999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="weatherBackgroundColor">
+            <color red="0.59975884889999997" green="0.90114205670000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
